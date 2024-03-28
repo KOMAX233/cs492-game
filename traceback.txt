@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/day2.rpy", line 198, in script
+    $ test_mention = true
+  File "game/day2.rpy", line 198, in <module>
+    $ test_mention = true
+NameError: name 'true' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/day2.rpy", line 198, in script
+    $ test_mention = true
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/day2.rpy", line 198, in <module>
+    $ test_mention = true
+NameError: name 'true' is not defined
+
+macOS-10.16-x86_64-i386-64bit x86_64
+Ren'Py 8.2.1.24030407
+test1 1.0
+Wed Mar 27 22:43:54 2024
