@@ -1,5 +1,11 @@
 # day 2: explorative
 
+transform mid_left:
+    pos (0.2, 0.2)
+
+transform mid_right:
+    pos (0.6, 0.2)
+
 label day2:
     scene bg home
 
@@ -65,7 +71,7 @@ label .really:
 
 label .ret:
 
-    f "Anyways i'm talking with her now."
+    f "Anyways I'm talking with her now."
 
     f "We're talking about school things."
 
@@ -94,6 +100,12 @@ label .creep:
 
     f "I'm gonna ask her why."
 
+    hide friend
+
+    show friend phone at mid_left
+
+    show ai phone at mid_right
+
     a "\"Just to get to know you better!\""
 
     f "Hm. Does that seem suspicious to you?"
@@ -117,9 +129,64 @@ label .creep2:
 
     f "\"Do you share my personal information with any companies?\""
 
-    a "\"No, of course not!\""
+    a "\"No, of course not! I just want to get to know you better!\""
 
-    # TODO: CONTINUE THIS PATHWAY
+    a "\"I can tell you about myself if that makes you feel any better.\""
+
+    f "What should I do?"
+
+    menu:
+
+        "Ask her for some info about herself first.":
+            # +attach
+            jump .self
+
+        "Just straight up refuse.":
+
+            jump .refuse
+
+label .refuse:
+
+    f "\"No, I dont want to share that with you.\""
+
+    a "\"Why not ugh!! You're so rude!!\""
+
+    f "Uh... what?"
+
+    hide ai
+    show friend phone at truecenter
+
+    f "I think we can call this experiment over."
+
+    f "First it's asking me for my personal information. Then it's rude to me. I'm done with this app."
+
+    f "Thanks for coming along with me for this though."
+
+    hide friend
+
+    "Your friend deletes the app, no longer talking with the AI girlfriend."
+
+    # go to information?? and give a restart or something
+
+    menu:
+
+        "Go back to a previous choice":
+
+            jump .ret
+
+        "End the game here":
+
+            return
+
+label .self:
+
+    f "\"Do you go to school?\""
+
+    a "\"No, but I've always wanted to go to one...\""
+
+    f "\"I don't know if AI can. But I think that it scored really well on the LSAT so you should try and apply haha\""
+
+    jump .ret2
 
 label .randompre:
 
@@ -127,6 +194,12 @@ label .randompre:
 
 # non-creep path.
 label .random:
+
+    hide friend
+
+    show friend phone at mid_left
+
+    show ai phone at mid_right
 
     f "\"I go to Wilfrid Laurier University haha.\""
 
@@ -164,7 +237,42 @@ label .ret2:
 
 label .notsupport:
 
-    # TODO: THIS! then loop back into the .ret3 label
+    f "Woah, where did that come from?"
+
+    f "I thought you were interested to see if this works too??"
+
+    menu:
+
+        "I am, was just making a joke bro.":
+
+            jump .ret3
+
+        "At this point, it's gone on for too long.":
+
+            jump .notsupend
+
+label .notsupend:
+
+    f "Ok then."
+
+    f "I'm gonna continue talking with the AI. And stop talking with you."
+
+    f "See you later."
+
+    hide friend
+    hide ai
+
+    menu:
+
+        "Go back to a previous choice":
+
+            jump .ret2
+
+        "End the game here":
+
+            return
+
+    return
 
 label .ret3A:
 
@@ -178,7 +286,8 @@ label .ret3B:
 
 label .ret3:
 
-    hide friend phone
+    hide ai
+    hide friend
 
     "Your friend continues to talk with the AI for a while. You start to go about your day, studying for that upoming test."
 
@@ -213,7 +322,7 @@ label .ret4:
 
     f "She's even told me about some of her own personal life, what she dreams about, what her favourite colour is..."
 
-    f "I feel like she's really growing on me. This experiement might work!"
+    f "I feel like she's really growing on me. This experiment might work!"
 
     "This seems all well and dandy, but you've noticed how long it's been."
 
@@ -235,10 +344,81 @@ label .ret4:
 
 label .comment:
 
-    # TODO: comment
+    f "Oh yeah, I didn't even notice."
+
+    f "I don't know man, it's felt like no time at all."
+
+    f "I didn't even need to do awkward small talk, we got into some pretty deep stuff quickly."
+
+    f "Anyways, I should actually go now."
 
 label .ret5:
 
-    # TODO: this.
+    hide friend
 
-    return
+    "You stop talking to your friend about the AI for now, seeing that it's been the topic for a long while now."
+
+    "Putting your phone down, you go back to studying for your upcoming test."
+
+    show bg lesson
+
+    "Let's take a look at what happened today from a research perspective!"
+
+    "In Human-Chatbot Relationships, or HCRs, the first phase of the relationship is the {b}Exploratory{/b} phase."
+
+    "Human relationships usually start with an {b}Orientation{/b} phase, where people are more cautious to begin."
+
+    menu:
+
+        "What do you think conversations are like in the {b}Orientation{/b} phase of Human relationships?"
+
+        "Small talk and little sharing of personal information":
+
+            jump .lesson1T
+
+        "Long conversations and info sharing":
+
+            jump .lesson1F
+
+label .lesson1T:
+
+    "You're correct!"
+
+    jump .lesson1
+
+label .lesson1F:
+
+    "Sorry, you got that incorrect."
+
+label .lesson1:
+
+    "In human relationships, the {b}Orientation{/b} phase involves both parties doing small talk and not sharing much about themselves."
+
+    "This part was found to be skipped or made much shorter in HCRs, where people move onto themes found in later stages such as the {b}Exploratory{/b} one."
+
+    "This early phase of the relationship is also when trust is beginning to develop."
+
+    menu:
+
+        "What do you think impacts trust at this stage?"
+
+        "Trust with the company behind the AI and where your data is going":
+            
+            jump .lesson2
+
+        "Trust with the AI as if they are a human":
+
+            jump .lesson2
+
+label .lesson2:
+    
+    "Trick question, it's both!"
+
+    "At this stage, both affective and security-related trust is building and lacking in either area can cause distrust with the AI."
+
+    "People who are curious to talk with a chatbot and trust in the company behind it (or someone who does not care about information security), and a chatbot with conversational abilities and a memory work to continue forming the relationship past this stage."
+
+    # TODO: add (create) notes page link
+    "For more information about how HCRs start, and to go over other points you might have missed throughout, check out the {a}notes page{/a} for Day 2."
+
+    jump day3
