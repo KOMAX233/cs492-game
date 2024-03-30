@@ -1,9 +1,9 @@
 # intro
 
-#replcae all rachel's with "friendName"
-#add in a background for all narrator moments
+#replcae all rachel's with e - for girl character
+#double check background for all narrator moments
 #add actual mental health values up and down for each game metric
-#fix the links
+#double check friend phone in all talking moments
 
 transform mid_left:
     pos (0.2, 0.2)
@@ -12,33 +12,35 @@ transform mid_right:
     pos (0.6, 0.2)
 
 label intro:
-    #change to bg neutral maybe
+    #change to bg narrator black
     scene bg home
 
     #need to add game title
-    # "Hello! Welcome to OUR GAME TITLE"
+    "Hello! Welcome to OUR GAME TITLE"
 
-    # "In this visual novel you will be taking on the role of a 20 year old university student"
+    "In this visual novel you will be taking on the role of a 20 year old university student"
     
-    # "The adventure you’ll be going on today will explore how humans interact with AI chatbots. We will learn about the harassment, privacy issues, and human dependence that can occur - while also exploring some of the potential benefits that these bots can have"
+    "The adventure you’ll be going on today will explore how humans interact with AI chatbots. We will learn about the harassment, privacy issues, and human dependence that can occur - while also exploring some of the potential benefits that these bots can have"
 
-    # "Throughout the game there will be points where you need to make a decision. Each decision will have a different impact and progress the story in a new direction - so choose carefully! To confirm a decision click the option with your mouse"
+    "Throughout the game there will be points where you need to make a decision. Each decision will have a different impact and progress the story in a new direction - so choose carefully! To confirm a decision click the option with your mouse"
 
-    # "Before the game can begin let’s set the scene:"
+    "Before the game can begin let’s set the scene:"
 
-    # $ myName = renpy.input("You are a 20-year-old university student named: ")
+    $ myName = renpy.input("You are a 20-year-old university student named: ")
 
-    # "Nice to meet you [myName]"
-    # define m = Character("[myName]")
-    $ myName = "bob"
-    define m = Character("bob")
-    $ friendName = "joe"
-    define f = Character("joe")
+    "Nice to meet you [myName]"
+    define m = Character("[myName]")
+    # $ myName = "bob"
+    # define m = Character("bob")
+    # $ friendName = "joe"
+    # define f = Character("joe")
 
 
 
-    # $ friendName = renpy.input("You have a male friend - let’s call him: ")
-    # define f = Character("[friendName]")
+    $ friendName = renpy.input("You have a male friend - let’s call him: ")
+    define f = Character("[friendName]")
+
+    scene bg home
 
     f "[myName] I have such a big crush on that new girl Rachel, but I don’t think she even knows who I am"
 
@@ -53,14 +55,19 @@ label intro:
             jump .continue
 
 label .continue:
+    #change to bg narrator black
+    scene bg home
+
     "You may have noticed that after making this decision [friendName]'s mental health score {b}[mental]{/b}"
     "As you continue to make decisions in the game this bar will go up or down. If the bar gets too low {b}you will lose the game!{/b}"
 
     "Let’s continue…"
 
+    scene bg home
+
     f "I gotta figure out something, watching youtube videos is not helping me at all"
 
-    #should be a black screen for transition not home
+    #change to bg narrator black
     scene bg home
 
     "A few days go by…"
@@ -116,12 +123,18 @@ label .categoryBars:
         f "You can talk to them, you can ask them questions, they’ll even send you spicy photos if you ask"
         f "It's not like I actually want to date the bot, but I don’t have anything better to do either now do I?"
 
+        #change to bg narrator black
+        scene bg home
+        
         "Before continuing in the game it is important to note the 2 new categories alongside [friendName]'s mental health bar"
         "There is now also ‘trust with the system’ and ‘attachment’"
         "Trust in the system represents how much [friendName] trusts their new AI companion. If you can manage to get trust low enough {b}you will win the game!{/b}"
         "Similarly, attachment represents how attached your friend is to their new AI friend. Who knows what might happen if they get too attached? If this bar gets too high {b}you will lose the game!{/b}"
 
         "Now back to the story..."
+
+   
+        scene bg home
 
         f "It's not like I actually want to date the bot, but I don’t have anything better to do either now do I?"
         f "It’s lonely out here"
