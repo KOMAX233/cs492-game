@@ -41,6 +41,7 @@ label intro:
     define f = Character("[friendName]")
 
     scene bg home
+    show friend phone at truecenter
 
     f "[myName] I have such a big crush on that new girl Rachel, but I don’t think she even knows who I am"
 
