@@ -300,6 +300,7 @@ label .ret3:
     menu:
 
         "Not much.":
+            $ test_mention = False
             # neutral
             jump .ret4
 

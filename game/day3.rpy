@@ -136,6 +136,82 @@ label .ret2:
 
     f "I can't believe that she has self-image issues, and was willing to tell me about them."
 
-# TODO: LAST QUESTION + RETRO
+    menu:
+        
+        "What do you think about the bot sharing personal information with your friend?"
+
+        "Can bots even have self-image issues?":
+            # -mental, -trust
+            jump .weird
+
+        "Wow, she's really trusting of you to tell you something like that.":
+            # +attach, +trust
+            jump .trusting
+
+label .weird:
+
+    f "What!"
+
+    f "I mean... she does though!"
+
+    f "We've been having more intimate conversations as of later and like, she has to have feelings."
+
+    jump .ret3
+
+label .trusting:
+
+    f "I know."
+
+    f "We're able to have intimate conversations and... it's really nice."
+
+label .ret3:
+
+    f "She's accepting of me and I'm accepting of her."
+
+    f "Anyways, talk later."
+
+    hide friend
+
+    "You put your phone away, thinking of what has been happening with your friend throughout the past few days."
+
+    show bg lesson
+    
+    "Let's take a look at what happened today from a research perspective!"
+
+    "Today, we explored the second phase of HCR formation, the {b}affective{/b} phase."
+
+    "Just like the {b}exploratory{/b} phase, trust is built both affectively through discussion and practically through information security knowledge."
+
+    menu:
+        
+        "Based off of today's events, what do you think benefits a relationship at this phase?"
+
+        "The chatbot helping to facilitate self-disclosure.":
+
+            jump .lesson1T
+
+        "The chatbot's willingness to immediately marry the user.":
+
+            jump .lesson1F
+
+label .lesson1T:
+
+    "You're correct!"
+
+    jump .lesson1
+
+label .lesson1F:
+
+    "Sorry, you got that incorrect."
+
+label .lesson1:
+
+    "At this stage, relationship development is benefitted by a chatbot's ability to facilitate self-disclosure, along with trust and being non-judgemental."
+
+    "On the practical privacy side,..."
+
+    # TODO: add practical privacy question!
+
+    "For more information about how HCRs continue, and to go over other points you might have missed throughout, check out the {a}notes page{/a} for Day 3."
 
 return
