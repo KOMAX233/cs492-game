@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/day2.rpy", line 330, in script
+    if test_mention:
+  File "game/day2.rpy", line 330, in <module>
+    if test_mention:
+NameError: name 'test_mention' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/day2.rpy", line 330, in script
+    if test_mention:
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/ast.py", line 1842, in execute
+    if renpy.python.py_eval(condition):
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/day2.rpy", line 330, in <module>
+    if test_mention:
+NameError: name 'test_mention' is not defined
+
+macOS-10.16-x86_64-i386-64bit x86_64
+Ren'Py 8.2.1.24030407
+test1 1.0
+Thu Mar 28 22:37:18 2024
