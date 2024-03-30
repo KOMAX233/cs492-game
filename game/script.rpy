@@ -4,8 +4,8 @@
 # name of the character.
 
 define e = Character("Eileen")
-define f = Character("Friend")
-define m = Character("Me")
+# define f = Character("Friend")
+# define m = Character("Me")
 define a = Character("AI")
 
 # The game starts here.
@@ -18,7 +18,7 @@ label start:
 
     scene bg room
 
-    jump day2
+    jump intro
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
