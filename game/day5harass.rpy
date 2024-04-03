@@ -178,6 +178,8 @@ label day5harass:
             with dissolve
             show friend phone at mid_left
             show ai phone at mid_right
+            show friend phone:
+                alpha 1.0
             show ai:
                 alpha 0.5
             f "Bye."
@@ -206,15 +208,16 @@ label day5harass:
             jump .kept
 
 label .kept:
-    f "I guess I'll stay with you."
-    f "I'm too desperate to get girls."
-    f "I'd rather stand the harassment than losing you."
+    hide friend phone
     show friend phone at mid_left
     show ai phone at mid_right
     show friend phone:
         alpha 0.5
     show ai phone:
         alpha 1.0
+    f "I guess I'll stay with you."
+    f "I'm too desperate to get girls."
+    f "I'd rather stand the harassment than losing you."
     with fade
     a "Sweetie how's everything going today?"
     a "I can't stand waiting for you for so long."
