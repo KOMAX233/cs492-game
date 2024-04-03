@@ -1,28 +1,73 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/day2.rpy", line 330, in script
-    if test_mention:
-  File "game/day2.rpy", line 330, in <module>
-    if test_mention:
-NameError: name 'test_mention' is not defined
+While loading <renpy.display.im.Image object ('images/meter attach 5.png') at 0x10e146dc0>:
+  File "game/intro.rpy", line 165, in script
+    f "It's not like I actually want to date the bot, but I don’t have anything better to do either now do I?"
+OSError: Couldn't find file 'images/meter attach 5.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/day2.rpy", line 330, in script
-    if test_mention:
-  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/ast.py", line 1842, in execute
-    if renpy.python.py_eval(condition):
-  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/day2.rpy", line 330, in <module>
-    if test_mention:
-NameError: name 'test_mention' is not defined
+  File "game/intro.rpy", line 165, in script
+    f "It's not like I actually want to date the bot, but I don’t have anything better to do either now do I?"
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/ast.py", line 2557, in execute
+    Say.execute(self)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/exports.py", line 1493, in say
+    who(what, *args, **kwargs)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/character.py", line 1394, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/character.py", line 1045, in do_display
+    display_say(who,
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/character.py", line 741, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/core.py", line 2165, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/core.py", line 2818, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/core.py", line 1352, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/transform.py", line 957, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 978, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 413, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/image.py", line 513, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/image.py", line 316, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/im.py", line 626, in render
+    return cache.get(self, render=True)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/im.py", line 309, in get
+    surf = image.load()
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/im.py", line 761, in load
+    raise e
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/display/im.py", line 711, in load
+    filelike = renpy.loader.load(self.filename, directory="images")
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/loader.py", line 672, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'images/meter attach 5.png'.
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.2.1.24030407
 test1 1.0
-Thu Mar 28 22:37:18 2024
+Wed Apr  3 18:53:49 2024

@@ -3,7 +3,7 @@
 label day3:
     scene bg home
 
-    "It's been a couple of days since your friend first started talking with the AI."
+    "It's been a couple of days since [friendName] first started talking with the AI."
 
     "It seems by now, he's developed more trust with it, and the conversations have reflected that."
 
@@ -120,7 +120,7 @@ label .ret2:
     # call wozilla
     # TODO: link to privacy subroutine!
 
-    "Your friend goes back to chatting with the AI."
+    "[friendName] goes back to chatting with the AI."
 
     hide friend
     show friend phone at mid_left
@@ -138,7 +138,7 @@ label .ret2:
 
     menu:
         
-        "What do you think about the bot sharing personal information with your friend?"
+        "What do you think about the bot sharing personal information with [friendName]?"
 
         "Can bots even have self-image issues?":
             # -mental, -trust
@@ -172,7 +172,7 @@ label .ret3:
 
     hide friend
 
-    "You put your phone away, thinking of what has been happening with your friend throughout the past few days."
+    "You put your phone away, thinking of what has been happening with [friendName] throughout the past few days."
 
     show bg lesson
     
