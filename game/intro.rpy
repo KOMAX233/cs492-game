@@ -4,6 +4,7 @@
 #double check background for all narrator moments
 #add actual mental health values up and down for each game metric
 #double check friend phone in all talking moments
+default is_restarted = False
 
 transform mid_left:
     pos (0.2, 0.2)
@@ -16,29 +17,31 @@ label intro:
     scene bg home
 
     #need to add game title
-    "Hello! Welcome to OUR GAME TITLE"
+    if is_restarted:
+        "Welcome back to OUR GAME TITLE"
+    else:
+        "Hello! Welcome to OUR GAME TITLE"
 
-    "In this visual novel you will be taking on the role of a 20 year old university student"
-    
-    "The adventure you’ll be going on today will explore how humans interact with AI chatbots. We will learn about the harassment, privacy issues, and human dependence that can occur - while also exploring some of the potential benefits that these bots can have"
+        "In this visual novel you will be taking on the role of a 20 year old university student"
+        
+        "The adventure you’ll be going on today will explore how humans interact with AI chatbots. We will learn about the harassment, privacy issues, and human dependence that can occur - while also exploring some of the potential benefits that these bots can have"
 
-    "Throughout the game there will be points where you need to make a decision. Each decision will have a different impact and progress the story in a new direction - so choose carefully! To confirm a decision click the option with your mouse"
+        "Throughout the game there will be points where you need to make a decision. Each decision will have a different impact and progress the story in a new direction - so choose carefully! To confirm a decision click the option with your mouse"
 
-    "Before the game can begin let’s set the scene:"
+        "Before the game can begin let’s set the scene:"
 
-    $ myName = renpy.input("You are a 20-year-old university student named: ")
+        $ myName = renpy.input("You are a 20-year-old university student named: ")
 
-    "Nice to meet you [myName]"
-    define m = Character("[myName]")
-    # $ myName = "bob"
-    # define m = Character("bob")
-    # $ friendName = "joe"
-    # define f = Character("joe")
+        "Nice to meet you [myName]"
+        define m = Character("[myName]")
+        # $ myName = "bob"
+        # define m = Character("bob")
+        # $ friendName = "joe"
+        # define f = Character("joe")
 
 
-
-    $ friendName = renpy.input("You have a male friend - let’s call him: ")
-    define f = Character("[friendName]")
+        $ friendName = renpy.input("You have a male friend - let’s call him: ")
+        define f = Character("[friendName]")
 
     scene bg home
     show friend phone at truecenter
