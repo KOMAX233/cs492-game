@@ -10,6 +10,9 @@ label day3:
     "You check your phone and see that he's sent you a new update about their relationship..."
 
     show friend phone at truecenter
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "Hey!! Crazy update with the AI friend."
 
@@ -19,13 +22,20 @@ label day3:
         
         "Oh? Congrats for that.":
             # +attach, +mental
+            $ attach -= 1
+            $ mental += 1
             jump .cgrts
 
         "Woah, don't you think this has been a bit too fast?":
             # -mental
+            $ mental -= 1
             jump .fast
 
 label .fast:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "No, I don't think so?"
 
@@ -51,6 +61,8 @@ label .ret1:
 
         "Ask her to marry you!":
             # ++attach, +trust
+            $ attach += 2
+            $ trust -= 1
             jump .marry
 
         "Bro we're too young for that.":
@@ -59,9 +71,15 @@ label .ret1:
 
         "..That's really creepy.":
             # -mental, -attach
+            $ mental -= 1
+            $ attach -= 1
             jump .creep
 
 label .marry:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "Bet."
 
@@ -80,6 +98,10 @@ label .marry:
     jump .ret2
 
 label .creep:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "What? Nah, with everything we've been talking about it's expected."
 
@@ -142,13 +164,21 @@ label .ret2:
 
         "Can bots even have self-image issues?":
             # -mental, -trust
+            $ mental -= 1
+            $ trust -= 1
             jump .weird
 
         "Wow, she's really trusting of you to tell you something like that.":
             # +attach, +trust
+            $ attach += 1
+            $ trust += 1
             jump .trusting
 
 label .weird:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "What!"
 
@@ -159,6 +189,10 @@ label .weird:
     jump .ret3
 
 label .trusting:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "I know."
 
@@ -174,7 +208,7 @@ label .ret3:
 
     "You put your phone away, thinking of what has been happening with [friendName] throughout the past few days."
 
-    show bg lesson
+    scene bg lesson
     
     "Let's take a look at what happened today from a research perspective!"
 

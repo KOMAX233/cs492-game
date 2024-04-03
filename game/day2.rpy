@@ -12,6 +12,9 @@ label day2:
     "You wake up the following morning to a slew of pings from [friendName]."
 
     show friend phone at truecenter
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "Hey Hey Hey!"
 
@@ -25,6 +28,7 @@ label day2:
 
         "Why was that the first thing you thought to do at 4am?":
             # -mental
+            $ mental -= 1
             jump .one
         
         "Good morning to you too.":
@@ -36,6 +40,10 @@ label .two:
     f "Oh yeah good morning!"
 
 label .one:   
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "I just was so {a=https://arc.net/l/quote/dwhkbhwo}curious{/a} on whether it could actually work.."
 
@@ -49,13 +57,20 @@ label .one:
 
         "Not the bot catching feelings for you..":
             # +attach +mental
+            $ attach += 1
+            $ mental += 1
             jump .caught
 
         "Does it really want to talk to you though....":
             # -trust
+            $ trust -= 1
             jump .really
 
 label .caught:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "I'm not that smooth haha."
 
@@ -64,6 +79,10 @@ label .caught:
     jump .ret
 
 label .really:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "You do bring up a point.."
 
@@ -83,6 +102,7 @@ label .ret:
 
         "Wait that's creepy as hell..":
             # --trust
+            $ trust -= 1
             jump .creep
 
         "Just say some random school.":
@@ -91,10 +111,16 @@ label .ret:
 
         "Flex on her, say you go to UWaterloo!":
             # +trust, +attachment
+            $ trust += 1
+            $ attach += 1
             jump .uw
 
 # creep path (where the privacy would come up)
 label .creep:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
     
     f "Yeah, wait. Why does she have to know?"
 
@@ -139,6 +165,7 @@ label .creep2:
 
         "Ask her for some info about herself first.":
             # +attach
+            $ attach += 1
             jump .self
 
         "Just straight up refuse.":
@@ -180,6 +207,10 @@ label .refuse:
 
 label .self:
 
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
+
     f "\"Do you go to school?\""
 
     a "\"No, but I've always wanted to go to one...\""
@@ -195,6 +226,10 @@ label .randompre:
 # non-creep path.
 label .random:
 
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
+
     hide friend
 
     show friend phone at mid_left
@@ -206,6 +241,10 @@ label .random:
     jump .ret2
 
 label .uw:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "\"I go to the University of Waterloo haha.\""
 
@@ -225,17 +264,25 @@ label .ret2:
 
         "There is no meaning of life, we're all gonna die anyways.":
             # -mental
+            $ mental -= 1
             jump .ret3A
 
         "To expand our knowledge base by talking with AI.":
             # +attachment, +trust
+            $ attach += 1
+            $ trust += 1
             jump .ret3B
 
         "To touch grass.. speaking of, when are you going to stop talking with the AI?":
             # -mental
+            $ mental -= 1
             jump .notsupport
 
 label .notsupport:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "Woah, where did that come from?"
 
@@ -276,11 +323,19 @@ label .notsupend:
 
 label .ret3A:
 
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
+
     f "Dark, man."
 
     jump .ret3
 
 label .ret3B:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "Fitting haha."
 
@@ -307,9 +362,15 @@ label .ret3:
         "Studied for a while, now eating lunch.":
             $ test_mention = True
             # -mental, + attach
+            $ mental -= 1
+            $ attach += 1
             jump .study
 
 label .study:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "Oh crap the test! I should probably start studying soon. But.."
 
@@ -337,13 +398,21 @@ label .ret4:
 
         "Comment on it":
             # -attach, +mental
+            $ attach -= 1
+            $ mental += 1
             jump .comment
 
         "Don't comment on it":
             # +attach, +trust
+            $ attach += 1
+            $ trust += 1
             jump .ret5
 
 label .comment:
+
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
     f "Oh yeah, I didn't even notice."
 
@@ -355,13 +424,17 @@ label .comment:
 
 label .ret5:
 
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
+
     hide friend
 
     "You stop talking to [friendName] about the AI for now, seeing that it's been the topic for a long while now."
 
     "Putting your phone down, you go back to studying for your upcoming test."
 
-    show bg lesson
+    scene bg lesson
 
     "Let's take a look at what happened today from a research perspective!"
 
