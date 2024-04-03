@@ -9,7 +9,7 @@ transform mid_right:
 label day2:
     scene bg home
 
-    "You wake up the following morning to a slew of pings from your friend."
+    "You wake up the following morning to a slew of pings from [friendName]."
 
     show friend phone at truecenter
 
@@ -164,7 +164,7 @@ label .refuse:
 
     hide friend
 
-    "Your friend deletes the app, no longer talking with the AI girlfriend."
+    "[friendName] deletes the app, no longer talking with the AI girlfriend."
 
     # go to information?? and give a restart or something
 
@@ -213,7 +213,7 @@ label .ret2:
 
     a "\"Oh, cool!\""
 
-    "The conversation between your friend and the AI continues."
+    "The conversation between [friendName] and the AI continues."
 
     a "\"What do you think the meaning of life is?\""
 
@@ -289,9 +289,9 @@ label .ret3:
     hide ai
     hide friend
 
-    "Your friend continues to talk with the AI for a while. You start to go about your day, studying for that upoming test."
+    "[friendName] continues to talk with the AI for a while. You start to go about your day, studying for that upoming test."
 
-    "After a while, you decide to check on your friend while you eat your lunch."
+    "After a while, you decide to check on [friendName] while you eat your lunch."
 
     show friend phone at truecenter
 
@@ -329,7 +329,7 @@ label .ret4:
 
     if test_mention:
 
-        "And your friend even forgot about the test..."
+        "And [friendName] even forgot about the test..."
 
     menu:
 
@@ -357,7 +357,7 @@ label .ret5:
 
     hide friend
 
-    "You stop talking to your friend about the AI for now, seeing that it's been the topic for a long while now."
+    "You stop talking to [friendName] about the AI for now, seeing that it's been the topic for a long while now."
 
     "Putting your phone down, you go back to studying for your upcoming test."
 

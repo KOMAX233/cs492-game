@@ -1,5 +1,10 @@
 # intro
 
+init python:
+    mental = 5
+    attach = 5
+    trust = 5
+
 #replcae all rachel's with e - for girl character
 #double check background for all narrator moments
 #add actual mental health values up and down for each game metric
@@ -11,9 +16,18 @@ transform mid_left:
 transform mid_right:
     pos (0.6, 0.2)
 
+transform t_mental:
+    pos (0.025, 0.025)
+
+transform t_trust:
+    pos (0.325, 0.025)
+
+transform t_attach:
+    pos (0.625, 0.025)
+
 label intro:
     #change to bg narrator black
-    scene bg home
+    scene bg blank
 
     #need to add game title
     "Hello! Welcome to OUR GAME TITLE"
@@ -42,22 +56,24 @@ label intro:
 
     scene bg home
     show friend phone at truecenter
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
 
     f "[myName] I have such a big crush on that new girl Rachel, but I don’t think she even knows who I am"
 
     menu:
 
         "Dude you’re 20 and can’t talk to a girl - you’ll be single forever":
-            $ mental = "decreased"
+            $ mental -= 1
             jump .continue
 
         "She doesn’t know what she’s missing out on, keep your head up":
-            $ mental = "increased"
+            $ mental += 1
             jump .continue
 
 label .continue:
     #change to bg narrator black
-    scene bg home
+    scene bg blank
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
 
     "You may have noticed that after making this decision [friendName]'s mental health score {b}[mental]{/b}"
     "As you continue to make decisions in the game this bar will go up or down. If the bar gets too low {b}you will lose the game!{/b}"
@@ -65,15 +81,20 @@ label .continue:
     "Let’s continue…"
 
     scene bg home
+    show friend phone at truecenter
+    $ renpy.show(f'mental {mental}', at_list=[t_mental]) 
 
-    f "I gotta figure out something, watching youtube videos is not helping me at all"
+    f "I gotta figure out something, watching youtube videos is not helping me at all."
 
     #change to bg narrator black
-    scene bg home
+    scene bg blank
 
     "A few days go by…"
 
     scene bg home
+
+    show friend phone at truecenter
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
 
     f "Hey [myName]! I got some great ideas cooking, I bet you $20 by this time next month Rachel is my girlfriend."
 
@@ -125,10 +146,10 @@ label .categoryBars:
         f "It's not like I actually want to date the bot, but I don’t have anything better to do either now do I?"
 
         #change to bg narrator black
-        scene bg home
+        scene bg blank
         
         "Before continuing in the game it is important to note the 2 new categories alongside [friendName]'s mental health bar"
-        "There is now also ‘trust with the system’ and ‘attachment’"
+        "There is now also ‘trust with the AI’ and ‘attachment’"
         "Trust in the system represents how much [friendName] trusts their new AI companion. If you can manage to get trust low enough {b}you will win the game!{/b}"
         "Similarly, attachment represents how attached your friend is to their new AI friend. Who knows what might happen if they get too attached? If this bar gets too high {b}you will lose the game!{/b}"
 
@@ -136,6 +157,10 @@ label .categoryBars:
 
    
         scene bg home
+        show friend phone at truecenter
+        $ renpy.show(f'mental {mental}', at_list=[t_mental])
+        $ renpy.show(f'trust {trust}', at_list=[t_trust])
+        $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
         f "It's not like I actually want to date the bot, but I don’t have anything better to do either now do I?"
         f "It’s lonely out here"
