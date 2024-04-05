@@ -7,6 +7,7 @@ define e = Character("Eileen")
 # define f = Character("Friend")
 # define m = Character("Me")
 define a = Character("AI")
+define g = Character("girl")
 
 # The game starts here.
 

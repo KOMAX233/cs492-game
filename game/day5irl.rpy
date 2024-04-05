@@ -197,7 +197,7 @@ label .ret5irl:
 
     "For more information about dealing with harassment to AI happening in HCR and its impact on human interactions, "
     "and to go over other points you might have missed throughout, "
-    "check out {a=https://www.sciencedirect.com/science/article/abs/pii/S2211695823000144.}“Date me date me”: AI chatbot interactions as a resource for the online construction of masculinity{/a}."
+    "check out {a=https://www.sciencedirect.com/science/article/abs/pii/S2211695823000144.}\"Date me date me\": AI chatbot interactions as a resource for the online construction of masculinity{/a}."
     scene black
     menu:
         "Want to try another ending?"
