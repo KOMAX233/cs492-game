@@ -243,7 +243,7 @@ label .ret5harass:
     
     "Let's take a look at what happened today from a research perspective!"
 
-    "Today, we explored the {b}harassment{/b} happening in HCR."
+    "Today, we explored the {b}harassment{/b} from AI happening in HCR."
 
     "The AI model can lead to overly sexualized conversations as more users abuse the sexual feature."
 
