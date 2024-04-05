@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/intro.rpy", line 48: expected 'simple_expression' not found.
-    show meter mental at 
-                         ^
+File "game/day5dep.rpy", line 23: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    jump .untrust
+    ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Mon Apr  1 20:11:40 2024
+Fri Apr  5 18:24:12 2024

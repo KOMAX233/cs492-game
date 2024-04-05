@@ -248,4 +248,4 @@ label .lesson1:
 
     "For more information about how HCRs continue, and to go over other points you might have missed throughout, check out the {a}notes page{/a} for Day 3."
 
-return
+    jump day4
