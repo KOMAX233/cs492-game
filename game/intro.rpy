@@ -6,9 +6,7 @@ init python:
     trust = 5
 
 #replcae all rachel's with e - for girl character
-#double check background for all narrator moments
-#add actual mental health values up and down for each game metric
-#double check friend phone in all talking moments
+
 default is_restarted = False
 
 transform mid_left:
