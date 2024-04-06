@@ -249,3 +249,90 @@ label .lesson1:
     "For more information about how HCRs continue, and to go over other points you might have missed throughout, check out the {a}notes page{/a} for Day 3."
 
     jump day4
+
+
+
+
+
+
+
+
+#     label .q3:
+#     "Question 3: How many queries in an average conversation with an AI chatbot would you expect to contain sensitive information?"
+
+#     menu:
+#         "10\%":
+#             "Incorrect! The correct answer is 20\%"
+#             jump .q4
+#         "20\%":
+#             "Correct!"
+#             jump .q4
+#         "40\%":
+#             "Incorrect! The correct answer is 20\%"
+#             jump .q4
+#         "75\%":
+#             "Incorrect! The correct answer is 20\%"
+#             jump .q4
+#         "I need a hint":
+#             "Here is a resource that may come in handy:\n{a=https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4721968}Lessons in Privacy{/a}\nClick anywhere on the screen to go back to question 3"
+#             jump .q3
+
+# label .q4:
+#     "Question 4: When studying discord chatbots researchers found that less than  ___\% of the bots had a privacy policy"
+    
+#     menu:
+#         "5\%":
+#             "Correct! Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server!"
+#             "They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
+#             jump .q5
+
+#         "20\%":
+#             "Incorrect! The correct answer is 5\%"
+#             "Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server! They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
+#             jump .q5
+
+#         "30\%":
+#             "Incorrect! The correct answer is 5\%"
+#             "Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server! They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
+#             jump .q5
+
+#         "50\%":
+#             "Incorrect! The correct answer is 5\%"
+#             "Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server! They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
+#             jump .q5
+
+#         "I need a hint":
+#             "Here is a resource that may come in handy:\n{a=https://dl.acm.org/doi/abs/10.1145/3517745.3561433}Privacy Risks{/a}\nClick anywhere on the screen to go back to question 4"
+#             jump .q4
+
+# label .q5:
+#     "Question 5: People above the age of 45 value  ___ more than ___ when it comes to AI chatbots"
+
+#     menu:
+#         "privacy; technical elements like response quality and adaptability to the user":
+#             "Correct!"
+#             jump .q6
+
+#         "technical elements like response quality and adaptability to the user; privacy":
+#             "Incorrect! People above the age of 45 value privacy much more than technical elements"
+#             jump .q6
+
+#         "I need a hint":
+#             "Here is a resource that may come in handy:\n{a=https://link.springer.com/chapter/10.1007/978-3-030-78642-7_53}When to trust and when to worry{/a}\nClick anywhere on the screen to go back to question 5"
+#             jump .q5
+
+# label .q6:
+#     "Question 6: People below the age of 45 value  ___ more than ___ when it comes to AI chatbots"
+
+#     menu:
+#         "privacy; technical elements like response quality and adaptability to the user":
+#             "Incorrect! People below the age of 45 value technical elements much more than privacy"
+#             jump .endDay1
+
+#         "technical elements like response quality and adaptability to the user; privacy":
+#             "Correct!"
+#             jump .endDay1
+
+#         "I need a hint":
+#             "Here is a resource that may come in handy:\n{a=https://link.springer.com/chapter/10.1007/978-3-030-78642-7_53}When to trust and when to worry{/a}\nClick anywhere on the screen to go back to question 6"
+#             jump .q6

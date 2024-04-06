@@ -150,6 +150,9 @@ label .categoryBars:
 
         #change to bg narrator black
         scene bg blank
+        $ renpy.show(f'mental {mental}', at_list=[t_mental])
+        $ renpy.show(f'trust {trust}', at_list=[t_trust])
+        $ renpy.show(f'attach {attach}', at_list=[t_attach])
         
         "Before continuing in the game it is important to note the 2 new categories alongside [friendName]'s mental health bar"
         "There is now also ‘trust with the AI’ and ‘attachment’"
@@ -189,11 +192,7 @@ label .retroDay1:
     "At the end of each day you will have a retrospective which focuses on the real world implications of the choices you make in the game"
     "Many of the themes and ideas you will interact with today have a significant impact on real people’s day to day lives"
 
-    "Even though you chose [support] be supportive of [friendName]'s use of the chatbot..."
-    "Your first retrospective will relate to both the potential benefits of AI chatbots and their privacy concerns, as this information may influence your decisions later in the game"
-
-    "Getting questions correct will boost [friendName]'s stats, while getting questions wrong will make them worse"
-    "Retrospective moments can be the difference between winning and losing during the day so make sure you give it your best shot!"
+    "Your first retrospective will relate to the potential benefits of AI chatbots"
 
     jump .q1
 
@@ -225,97 +224,18 @@ label .q2:
             "Correct!"
             "General consensus is that having 24/7 access to an AI chatbot is beneficial for individuals"
             "Without the constraints of distance and time people are always able to alleviate feelings of loneliness or isolation immediately, which often is not possible in a real relationship."
-            jump .q3
+            jump .endDay1
 
         "False":
             "Incorrect!"
             "While it is definitely a new idea that will continue to be researched and explored, current sentiment within the AI community shows that having 24/7 access to an AI chatbot is beneficial for individuals"
             "Without the constraints of distance and time people are able to alleviate feelings of loneliness or isolation immediately, which often is not possible in a real relationship"
-            jump .q3
+            jump .endDay1
 
         "I need a hint":
             "Here are some sources that may be useful:\n{a=https://www.techtarget.com/whatis/definition/large-language-model-LLM}Linkedin{/a}\n{a=https://www.techtarget.com/whatis/definition/large-language-model-LLM}Health News{/a}\nClick anywhere on the screen to go back to question 2"
             jump .q2
 
-label .q3:
-    "Question 3: How many queries in an average conversation with an AI chatbot would you expect to contain sensitive information?"
-
-    menu:
-        "10\%":
-            "Incorrect! The correct answer is 20\%"
-            jump .q4
-        "20\%":
-            "Correct!"
-            jump .q4
-        "40\%":
-            "Incorrect! The correct answer is 20\%"
-            jump .q4
-        "75\%":
-            "Incorrect! The correct answer is 20\%"
-            jump .q4
-        "I need a hint":
-            "Here is a resource that may come in handy:\n{a=https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4721968}Lessons in Privacy{/a}\nClick anywhere on the screen to go back to question 3"
-            jump .q3
-
-label .q4:
-    "Question 4: When studying discord chatbots researchers found that less than  ___\% of the bots had a privacy policy"
-    
-    menu:
-        "5\%":
-            "Correct! Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server!"
-            "They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
-            jump .q5
-
-        "20\%":
-            "Incorrect! The correct answer is 5\%"
-            "Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server! They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
-            jump .q5
-
-        "30\%":
-            "Incorrect! The correct answer is 5\%"
-            "Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server! They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
-            jump .q5
-
-        "50\%":
-            "Incorrect! The correct answer is 5\%"
-            "Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server! They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
-            jump .q5
-
-        "I need a hint":
-            "Here is a resource that may come in handy:\n{a=https://dl.acm.org/doi/abs/10.1145/3517745.3561433}Privacy Risks{/a}\nClick anywhere on the screen to go back to question 4"
-            jump .q4
-
-label .q5:
-    "Question 5: People above the age of 45 value  ___ more than ___ when it comes to AI chatbots"
-
-    menu:
-        "privacy; technical elements like response quality and adaptability to the user":
-            "Correct!"
-            jump .q6
-
-        "technical elements like response quality and adaptability to the user; privacy":
-            "Incorrect! People above the age of 45 value privacy much more than technical elements"
-            jump .q6
-
-        "I need a hint":
-            "Here is a resource that may come in handy:\n{a=https://link.springer.com/chapter/10.1007/978-3-030-78642-7_53}When to trust and when to worry{/a}\nClick anywhere on the screen to go back to question 5"
-            jump .q5
-
-label .q6:
-    "Question 6: People below the age of 45 value  ___ more than ___ when it comes to AI chatbots"
-
-    menu:
-        "privacy; technical elements like response quality and adaptability to the user":
-            "Incorrect! People below the age of 45 value technical elements much more than privacy"
-            jump .endDay1
-
-        "technical elements like response quality and adaptability to the user; privacy":
-            "Correct!"
-            jump .endDay1
-
-        "I need a hint":
-            "Here is a resource that may come in handy:\n{a=https://link.springer.com/chapter/10.1007/978-3-030-78642-7_53}When to trust and when to worry{/a}\nClick anywhere on the screen to go back to question 6"
-            jump .q6
 
 label .endDay1:
     "Congrats on finishing the introduction and tutorial. Let the games begin!"
