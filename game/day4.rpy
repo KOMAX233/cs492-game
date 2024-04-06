@@ -178,4 +178,4 @@ label .ret4:
     elif d5end == 1:
         jump day5harass
     else:
-        jump d5girl
+        jump day5irl
