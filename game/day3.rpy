@@ -246,6 +246,6 @@ label .lesson1:
 
     # TODO: add practical privacy question!
 
-    "For more information about how HCRs continue, and to go over other points you might have missed throughout, check out the {a}notes page{/a} for Day 3."
+    "For more information about how HCRs continue, and to go over other points you might have missed throughout, check out the {a=https://docs.google.com/document/d/1RtchC3xMHzOkjOBneg0ck7O-n9nN4z-B2JeB8z9Lqdo/edit#heading=h.wfqpcvoulmej}notes page{/a} for Day 3."
 
 return

@@ -45,7 +45,7 @@ label .one:
     $ renpy.show(f'trust {trust}', at_list=[t_trust])
     $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
-    f "I just was so {a=https://arc.net/l/quote/dwhkbhwo}curious{/a} on whether it could actually work.."
+    f "I just was so curious about whether it could actually work.."
 
     f "Like if this can get me to learn how to talk to girls."
 
@@ -493,6 +493,6 @@ label .lesson2:
     "People who are curious to talk with a chatbot and trust in the company behind it (or someone who does not care about information security), and a chatbot with conversational abilities and a memory work to continue forming the relationship past this stage."
 
     # TODO: add (create) notes page link
-    "For more information about how HCRs start, and to go over other points you might have missed throughout, check out the {a}notes page{/a} for Day 2."
+    "For more information about how HCRs start, and to go over other points you might have missed throughout, check out the {a=https://docs.google.com/document/d/1RtchC3xMHzOkjOBneg0ck7O-n9nN4z-B2JeB8z9Lqdo/edit#heading=h.isbeuvrch208}notes page{/a} for Day 2."
 
     jump day3
