@@ -48,11 +48,6 @@ label intro:
 
         "Nice to meet you [myName]"
         define m = Character("[myName]")
-        # $ myName = "bob"
-        # define m = Character("bob")
-        # $ friendName = "joe"
-        # define f = Character("joe")
-
 
         $ friendName = renpy.input("You have a male friend - let’s call him: ")
         define f = Character("[friendName]")
