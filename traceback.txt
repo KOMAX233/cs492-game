@@ -1,22 +1,24 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/day5dep.rpy", line 44, in script
-    f "Anyways, I'm hungry. Let's get burgers!"
-ScriptError: could not find label 'day5dep.d5dgoodretro'.
+  File "game/day2.rpy", line 559, in script
+    "For more information about how HCRs start, and to go over other points you might have missed throughout, check out {a=https://www-sciencedirect-com.proxy.lib.uwaterloo.ca/science/article/pii/S1071581921000197?via%3Dihub#sec0053}this informative article{/a}."
+ValueError: unsupported format character 'D' (0x44) at index 214
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/day5dep.rpy", line 44, in script
-    f "Anyways, I'm hungry. Let's get burgers!"
-  File "C:\Games\ren_py\renpy-8.2.0-sdk\renpy\ast.py", line 1698, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Games\ren_py\renpy-8.2.0-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'day5dep.d5dgoodretro'.
+  File "game/day2.rpy", line 559, in script
+    "For more information about how HCRs start, and to go over other points you might have missed throughout, check out {a=https://www-sciencedirect-com.proxy.lib.uwaterloo.ca/science/article/pii/S1071581921000197?via%3Dihub#sec0053}this informative article{/a}."
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/ast.py", line 2557, in execute
+    Say.execute(self)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "/Users/anthonymr/school/4A/cs492/renpy-8.2.1-sdk/renpy/exports.py", line 1482, in say
+    what = what % tag_quoting_dict
+ValueError: unsupported format character 'D' (0x44) at index 214
 
-Windows-10-10.0.22621 AMD64
+macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.2.1.24030407
 test1 1.0
-Fri Apr  5 18:44:10 2024
+Sat Apr  6 19:51:20 2024

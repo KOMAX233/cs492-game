@@ -45,7 +45,7 @@ label .one:
     $ renpy.show(f'trust {trust}', at_list=[t_trust])
     $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
-    f "I just was so {a=https://arc.net/l/quote/dwhkbhwo}curious{/a} on whether it could actually work.."
+    f "I just was so curious on whether it could actually work.."
 
     f "Like if this can get me to learn how to talk to girls."
 
@@ -131,9 +131,17 @@ label .creep:
     show friend phone at mid_left
 
     show ai phone at mid_right
-
+    
+    show friend :
+        alpha 0.5
+    show ai :
+        alpha 1.0
     a "\"Just to get to know you better!\""
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "Hm. Does that seem suspicious to you?"
 
     menu:
@@ -153,12 +161,24 @@ label .creep2:
     # https://arc.net/l/quote/bpeaayca - ask and replika will say "no"
     f "Let me ask if it's being shared with anyone."
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "\"Do you share my personal information with any companies?\""
 
+    show friend :
+        alpha 0.5
+    show ai :
+        alpha 1.0
     a "\"No, of course not! I just want to get to know you better!\""
 
     a "\"I can tell you about myself if that makes you feel any better.\""
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "What should I do?"
 
     menu:
@@ -174,10 +194,22 @@ label .creep2:
 
 label .refuse:
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "\"No, I dont want to share that with you.\""
 
+    show friend :
+        alpha 0.5
+    show ai :
+        alpha 1.0
     a "\"Why not ugh!! You're so rude!!\""
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "Uh... what?"
 
     hide ai
@@ -211,10 +243,22 @@ label .self:
     $ renpy.show(f'trust {trust}', at_list=[t_trust])
     $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "\"Do you go to school?\""
 
+    show friend :
+        alpha 0.5
+    show ai :
+        alpha 1.0
     a "\"No, but I've always wanted to go to one...\""
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "\"I don't know if AI can. But I think that it scored really well on the LSAT so you should try and apply haha\""
 
     jump .ret2
@@ -236,6 +280,10 @@ label .random:
 
     show ai phone at mid_right
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "\"I go to Wilfrid Laurier University haha.\""
 
     jump .ret2
@@ -246,16 +294,32 @@ label .uw:
     $ renpy.show(f'trust {trust}', at_list=[t_trust])
     $ renpy.show(f'attach {attach}', at_list=[t_attach])
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "\"I go to the University of Waterloo haha.\""
 
 label .ret2:
 
+    show friend :
+        alpha 0.5
+    show ai :
+        alpha 1.0
     a "\"Oh, cool!\""
 
     "The conversation between [friendName] and the AI continues."
 
+    show friend :
+        alpha 0.5
+    show ai :
+        alpha 1.0
     a "\"What do you think the meaning of life is?\""
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "Woah, that's a pretty deep question."
 
     f "How should I even respond to that?"
@@ -444,7 +508,7 @@ label .ret5:
 
     menu:
 
-        "What do you think conversations are like in the {b}Orientation{/b} phase of Human relationships?"
+        "Question 1: What do you think conversations are like in the {b}Orientation{/b} phase of Human relationships?"
 
         "Small talk and little sharing of personal information":
 
@@ -474,7 +538,7 @@ label .lesson1:
 
     menu:
 
-        "What do you think impacts trust at this stage?"
+        "Question 2: What do you think impacts trust at this stage?"
 
         "Trust with the company behind the AI and where your data is going":
             
@@ -490,9 +554,32 @@ label .lesson2:
 
     "At this stage, both affective and security-related trust is building and lacking in either area can cause distrust with the AI."
 
-    "People who are curious to talk with a chatbot and trust in the company behind it (or someone who does not care about information security), and a chatbot with conversational abilities and a memory work to continue forming the relationship past this stage."
+    menu:
 
-    # TODO: add (create) notes page link
-    "For more information about how HCRs start, and to go over other points you might have missed throughout, check out the {a}notes page{/a} for Day 2."
+        "Question 3: What do you think are the main motivators for intitating and continuing conversations with AI chatbots?"
+
+        "Curiosity and Loneliness":
+
+            jump .lesson3T
+
+        "Anxiety and Depression":
+
+            jump .lesson3F
+
+label .lesson3T:
+
+    "You're correct!"
+
+    jump .lesson3
+
+label .lesson3F:
+
+    "Sorry, you got that incorrect."
+
+label .lesson3:
+
+    "People who are curious to talk with a chatbot or feel lonely, and have trust in the company behind it (or someone who does not care about information security) are likely to continue forming the relationship past this stage."
+
+    "For more information about how HCRs start, and to go over other points you might have missed throughout, check out {a=https://bit.ly/3vElCLl}this informative article{/a}."
 
     jump day3
