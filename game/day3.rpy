@@ -204,10 +204,80 @@ label .ret3:
 
     #privacy stuff here
 
-     
+    scene bg blank
 
+    "You're thinking about [friendName] and how dangerous it is that they're telling the AI all this private information..."
+
+    scene bg home
+    "You do a quick google search and end up at the following {a=https://foundation.mozilla.org/en/blog/creepyexe-mozilla-urges-public-to-swipe-left-on-romantic-ai-chatbots-due-to-major-privacy-red-flags/}article{/a}"
+
+    show friend phone at truecenter
+
+
+    menu:
+        "Hey have you read that new Mozilla article they just put out for valentines day? It talks about how AI chatbots sell your data":
+            #-trust
+            #-attachment
+            $ trust -= 1
+            $ attach -= 1
+            jump .afterpriv
+
+        "Every company sells our data these days who cares":
+            #neutral
+            jump .data
+
+label .afterpriv:
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
+
+    f "So what? literally every app we use sells our data - at least this one actually helps me too"
+
+    menu:
+        "You're not worried that they aren't even telling you how the data will be used?":
+            #-trust
+            #-attachment
+            $ trust -= 1
+            $ attach -= 1
+            jump .keepgoing
+
+        "You don't find it weird the Romantic AI app sent out 24,354 trackers in 1 minute??":
+            #-trust
+            #-attachment
+            $ trust -= 1
+            $ attach -= 1
+            jump .keepgoing
+
+        "Isn't it scary that most of these companies don't even force users to secure their passwords. With how much data they have - can you imagine if your account got hacked?":
+            #-trust
+            #-attachment
+            $ trust -= 1
+            $ attach -= 1
+            jump .keepgoing
+
+
+
+label .data:
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
+
+    f "exactly! literally every app we use sells our data - at least this one actually helps me too"
+
+    jump .cont
+
+label .keepgoing:
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
+
+    f "you gotta relax it's not that deep"
+
+    jump .cont
     
-    f "Anyways, talk later."
+label .cont:
+
+    f "Anyways, talk later. I gotta go"
 
     hide friend
 
@@ -321,15 +391,39 @@ label .q6:
     menu:
         "privacy; technical elements like response quality and adaptability to the user":
             "Incorrect! People below the age of 45 value technical elements much more than privacy"
-            jump .ending
+            jump .q7
 
         "technical elements like response quality and adaptability to the user; privacy":
             "Correct!"
-            jump .ending
+            jump .q7
 
         "I need a hint":
             "Here is a resource that may come in handy:\n{a=https://link.springer.com/chapter/10.1007/978-3-030-78642-7_53}When to trust and when to worry{/a}\nClick anywhere on the screen to go back to question 6"
             jump .q6
+
+label .q7:
+    "Question 7: Of the 11 romantic chatbots studied by Mozilla, how many had adequate privacy or security policies?"
+
+    menu:
+        "0":
+            "Correct!"
+            jump .ending
+
+        "1":
+            "Incorrect! The correct answer is 0!"
+            jump .ending
+
+        "2":
+            "Incorrect! The correct answer is 0!"
+            jump .ending
+
+        "3":
+            "Incorrect! The correct answer is 0!"
+            jump .ending
+
+        "I need a hint":
+            "Here is a resource that may come in handy:\n{a=https://foundation.mozilla.org/en/blog/creepyexe-mozilla-urges-public-to-swipe-left-on-romantic-ai-chatbots-due-to-major-privacy-red-flags/}Mozilla{/a}\nClick anywhere on the screen to go back to question 7"
+            jump .q7
 
 label .ending:
     "For more information about how HCRs continue, and to go over other points you might have missed throughout, check out the {a}notes page{/a} for Day 3."
