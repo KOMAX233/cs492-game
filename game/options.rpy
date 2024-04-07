@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("test1")
+define config.name = _("Artificial Attachment")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -30,6 +30,7 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+This project was made by Anthony Maocheia-Ricci, Yue Fang, Lynn Kwon, and Parth More for CS 492 at UWaterloo.
 """)
 
 
@@ -37,7 +38,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "test1"
+define build.name = "artattach"
 
 
 ## Sounds and music ############################################################
