@@ -314,8 +314,10 @@ label .ret3:
 
     "You're thinking about [friendName] and how dangerous it is that they're telling the AI all this private information..."
 
-    scene bg home
+    scene bg tablet
     "You do a quick google search and end up at the following {a=https://foundation.mozilla.org/en/blog/creepyexe-mozilla-urges-public-to-swipe-left-on-romantic-ai-chatbots-due-to-major-privacy-red-flags/}article{/a}"
+
+    scene bg home
 
     show friend phone at truecenter
 
@@ -324,7 +326,7 @@ label .ret3:
         "Hey have you read that new Mozilla article they just put out for valentines day? It talks about how AI chatbots sell your data":
             #-trust
             #-attachment
-            $ trust -= 1
+            $ if trust > 1: trust -= 1
             $ attach -= 1
             jump .afterpriv
 
@@ -333,6 +335,18 @@ label .ret3:
             jump .data
 
 label .afterpriv:
+
+    if attach < 1:
+        menu:
+            "Your friend's attachment dropped, so he deleted the app. You win!"
+
+            "Play again from the same day?":
+                $ attach = 5
+                jump day3
+
+            "End the game?":
+                return
+
     $ renpy.show(f'mental {mental}', at_list=[t_mental])
     $ renpy.show(f'trust {trust}', at_list=[t_trust])
     $ renpy.show(f'attach {attach}', at_list=[t_attach])
@@ -343,21 +357,21 @@ label .afterpriv:
         "You're not worried that they aren't even telling you how the data will be used?":
             #-trust
             #-attachment
-            $ trust -= 1
+            $ if trust > 1: trust -= 1
             $ attach -= 1
             jump .keepgoing
 
         "You don't find it weird the Romantic AI app sent out 24,354 trackers in 1 minute??":
             #-trust
             #-attachment
-            $ trust -= 1
+            $ if trust > 1: trust -= 1
             $ attach -= 1
             jump .keepgoing
 
         "Isn't it scary that most of these companies don't even force users to secure their passwords. With how much data they have - can you imagine if your account got hacked?":
             #-trust
             #-attachment
-            $ trust -= 1
+            $ if trust > 1: trust -= 1
             $ attach -= 1
             jump .keepgoing
 
@@ -373,6 +387,18 @@ label .data:
     jump .cont
 
 label .keepgoing:
+
+    if attach < 1:
+        menu:
+            "Your friend's attachment dropped, so he deleted the app. You win!"
+
+            "Play again from the same day?":
+                $ attach = 5
+                jump day3
+
+            "End the game?":
+                return
+
     $ renpy.show(f'mental {mental}', at_list=[t_mental])
     $ renpy.show(f'trust {trust}', at_list=[t_trust])
     $ renpy.show(f'attach {attach}', at_list=[t_attach])
