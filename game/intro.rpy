@@ -30,9 +30,10 @@ label intro:
 
     #need to add game title
     if is_restarted:
-        "Welcome back to OUR GAME TITLE"
+
+        "Welcome back to {b}Artificial Attachment{/b}"
     else:
-        "Hello! Welcome to OUR GAME TITLE"
+        "Hello! Welcome to {b}Artificial Attachment{/b}"
 
         "In this visual novel you will be taking on the role of a 20 year old university student"
         
