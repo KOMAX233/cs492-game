@@ -308,7 +308,82 @@ label .ret3:
 
     f "She's accepting of me and I'm accepting of her."
 
-    f "Anyways, talk later."
+    #privacy stuff here
+
+    scene bg blank
+
+    "You're thinking about [friendName] and how dangerous it is that they're telling the AI all this private information..."
+
+    scene bg home
+    "You do a quick google search and end up at the following {a=https://foundation.mozilla.org/en/blog/creepyexe-mozilla-urges-public-to-swipe-left-on-romantic-ai-chatbots-due-to-major-privacy-red-flags/}article{/a}"
+
+    show friend phone at truecenter
+
+
+    menu:
+        "Hey have you read that new Mozilla article they just put out for valentines day? It talks about how AI chatbots sell your data":
+            #-trust
+            #-attachment
+            $ trust -= 1
+            $ attach -= 1
+            jump .afterpriv
+
+        "Every company sells our data these days who cares":
+            #neutral
+            jump .data
+
+label .afterpriv:
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
+
+    f "So what? literally every app we use sells our data - at least this one actually helps me too"
+
+    menu:
+        "You're not worried that they aren't even telling you how the data will be used?":
+            #-trust
+            #-attachment
+            $ trust -= 1
+            $ attach -= 1
+            jump .keepgoing
+
+        "You don't find it weird the Romantic AI app sent out 24,354 trackers in 1 minute??":
+            #-trust
+            #-attachment
+            $ trust -= 1
+            $ attach -= 1
+            jump .keepgoing
+
+        "Isn't it scary that most of these companies don't even force users to secure their passwords. With how much data they have - can you imagine if your account got hacked?":
+            #-trust
+            #-attachment
+            $ trust -= 1
+            $ attach -= 1
+            jump .keepgoing
+
+
+
+label .data:
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
+
+    f "exactly! literally every app we use sells our data - at least this one actually helps me too"
+
+    jump .cont
+
+label .keepgoing:
+    $ renpy.show(f'mental {mental}', at_list=[t_mental])
+    $ renpy.show(f'trust {trust}', at_list=[t_trust])
+    $ renpy.show(f'attach {attach}', at_list=[t_attach])
+
+    f "you gotta relax it's not that deep"
+
+    jump .cont
+    
+label .cont:
+
+    f "Anyways, talk later. I gotta go"
 
     hide friend
     hide ai
@@ -349,10 +424,115 @@ label .lesson1:
 
     "At this stage, relationship development is benefitted by a chatbot's ability to facilitate self-disclosure, along with trust and being non-judgemental."
 
-    "On the practical privacy side,..."
+    "On this day you have also started to think a little about the privacy implications of these chatbot services. Consider how the following questions impact your understanding of the risks"
 
-    # TODO: add practical privacy question!
+    jump .q3
 
+label .q3:
+    "Question 3: How many queries in an average conversation with an AI chatbot would you expect to contain sensitive information?"
+
+    menu:
+        "10\%":
+            "Incorrect! The correct answer is 20\%"
+            jump .q4
+        "20\%":
+            "Correct!"
+            jump .q4
+        "40\%":
+            "Incorrect! The correct answer is 20\%"
+            jump .q4
+        "75\%":
+            "Incorrect! The correct answer is 20\%"
+            jump .q4
+        "I need a hint":
+            "Here is a resource that may come in handy:\n{a=https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4721968}Lessons in Privacy{/a}\nClick anywhere on the screen to go back to question 3"
+            jump .q3
+
+label .q4:
+    "Question 4: When studying discord chatbots researchers found that less than  ___\% of the bots had a privacy policy"
+    
+    menu:
+        "5\%":
+            "Correct! Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server!"
+            "They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
+            jump .q5
+
+        "20\%":
+            "Incorrect! The correct answer is 5\%"
+            "Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server! They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
+            jump .q5
+
+        "30\%":
+            "Incorrect! The correct answer is 5\%"
+            "Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server! They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
+            jump .q5
+
+        "50\%":
+            "Incorrect! The correct answer is 5\%"
+            "Did you know that there was even a recorded instance of a developer logging in directly to the chatbot in a discord server! They accessed links and files which were in the channel, even sending a message saying “wtf is this bro”"
+            jump .q5
+
+        "I need a hint":
+            "Here is a resource that may come in handy:\n{a=https://dl.acm.org/doi/abs/10.1145/3517745.3561433}Privacy Risks{/a}\nClick anywhere on the screen to go back to question 4"
+            jump .q4
+
+label .q5:
+    "Question 5: People above the age of 45 value  ___ more than ___ when it comes to AI chatbots"
+
+    menu:
+        "privacy; technical elements like response quality and adaptability to the user":
+            "Correct!"
+            jump .q6
+
+        "technical elements like response quality and adaptability to the user; privacy":
+            "Incorrect! People above the age of 45 value privacy much more than technical elements"
+            jump .q6
+
+        "I need a hint":
+            "Here is a resource that may come in handy:\n{a=https://link.springer.com/chapter/10.1007/978-3-030-78642-7_53}When to trust and when to worry{/a}\nClick anywhere on the screen to go back to question 5"
+            jump .q5
+
+label .q6:
+    "Question 6: People below the age of 45 value  ___ more than ___ when it comes to AI chatbots"
+
+    menu:
+        "privacy; technical elements like response quality and adaptability to the user":
+            "Incorrect! People below the age of 45 value technical elements much more than privacy"
+            jump .q7
+
+        "technical elements like response quality and adaptability to the user; privacy":
+            "Correct!"
+            jump .q7
+
+        "I need a hint":
+            "Here is a resource that may come in handy:\n{a=https://link.springer.com/chapter/10.1007/978-3-030-78642-7_53}When to trust and when to worry{/a}\nClick anywhere on the screen to go back to question 6"
+            jump .q6
+
+label .q7:
+    "Question 7: Of the 11 romantic chatbots studied by Mozilla, how many had adequate privacy or security policies?"
+
+    menu:
+        "0":
+            "Correct!"
+            jump .ending
+
+        "1":
+            "Incorrect! The correct answer is 0!"
+            jump .ending
+
+        "2":
+            "Incorrect! The correct answer is 0!"
+            jump .ending
+
+        "3":
+            "Incorrect! The correct answer is 0!"
+            jump .ending
+
+        "I need a hint":
+            "Here is a resource that may come in handy:\n{a=https://foundation.mozilla.org/en/blog/creepyexe-mozilla-urges-public-to-swipe-left-on-romantic-ai-chatbots-due-to-major-privacy-red-flags/}Mozilla{/a}\nClick anywhere on the screen to go back to question 7"
+            jump .q7
+
+label .ending:
     "For more information about how HCRs continue, and to go over other points you might have missed throughout, check out {a=https://bit.ly/3vElCLl}this informative article{/a}."
 
     jump day4
