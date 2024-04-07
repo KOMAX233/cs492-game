@@ -55,35 +55,34 @@ label day5irl:
             hide friend phone
             with fade
             show friend phone at mid_left
-            # show girl phone
-            show ai phone at mid_right
+            show girl phone at mid_right
             show friend phone:
                 alpha 1.0
-            show ai:
+            show girl:
                 alpha 0.5
             f "Hello!"
 
             show friend phone:
                 alpha 0.5
-            show ai:
+            show girl:
                 alpha 1.0
             g "Oh, hi."
 
             show friend phone:
                 alpha 1.0
-            show ai:
+            show girl:
                 alpha 0.5
             f "So, how are you doing?"
 
             show friend phone:
                 alpha 0.5
-            show ai:
+            show girl:
                 alpha 1.0
             g "Um, pretty good I suppose. What about you?"
             
             show friend phone:
                 alpha 1.0
-            show ai:
+            show girl:
                 alpha 0.5
             f "Pretty good..."
             f "Um, truth is, I've had a crush on you for a long time. "
@@ -91,12 +90,12 @@ label day5irl:
             
             show friend phone:
                 alpha 0.5
-            show ai:
+            show girl:
                 alpha 1.0
             g "Uh, sure!"
             show friend phone:
                 alpha 1.0
-            show ai:
+            show girl:
                 alpha 0.5
             f "Great! Can I get your number?"
             scene black
@@ -108,45 +107,44 @@ label day5irl:
             hide friend phone
             with fade
             show friend phone at mid_left
-            # show girl phone
-            show ai phone at mid_right
+            show girl phone at mid_right
             show friend phone:
                 alpha 1.0
-            show ai:
+            show girl:
                 alpha 0.5
             f "Have you ever wondered what the meaning of life is?"
             show friend phone:
                 alpha 0.5
-            show ai:
+            show girl:
                 alpha 1.0
             g "..."
             show friend phone:
                 alpha 1.0
-            show ai:
+            show girl:
                 alpha 0.5
             f "What's your favorite color?"
             show friend phone:
                 alpha 0.5
-            show ai:
+            show girl:
                 alpha 1.0
             g "..."
             show friend phone:
                 alpha 1.0
-            show ai:
+            show girl:
                 alpha 0.5
             f "What's your childhood dream?"
             show friend phone:
                 alpha 0.5
-            show ai:
+            show girl:
                 alpha 1.0
             g "..."
             show friend phone:
                 alpha 1.0
-            show ai:
+            show girl:
                 alpha 0.5
             f "Oh, and... how do you feel about marriage?"
             hide friend
-            hide ai
+            hide girl
             show friend phone at truecenter
             menu:
                 "You've been blocked.":
@@ -203,7 +201,7 @@ label .ret5irl:
         "Want to try another ending?"
         "Sure":
             $ is_restarted = True
-            jump intro
+            jump day4
         "No thanks":
             return
     return
