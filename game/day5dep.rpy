@@ -52,7 +52,7 @@ label .tooattach:
 
     f "Good timing. I... need your help. The chatbot hasn't gotten any better, and I don't think we can go on anymore. Should I delete her?"
 
-    "You say yes"
+    "You say yes."
 
     f "..."
 
@@ -65,8 +65,6 @@ label .tooattach:
     "The door closes. You couldn't do anything else. You start ruminating on your previous choices, looking into what went wrong."
 
     "But none of that can change the present now. If only you could rewind and choose differently..."
-
-    "Bad end."
 
     jump .d5dbadret
 
@@ -85,7 +83,15 @@ label .d5dbadret:
     Make sure you choose differently! Your friend has gotten emotionally dependent on the chatbot. Think about how you could
     change things. Maybe if his affection or trust was lower...
 
-    Bad end. Load up a previous save or start over again!
     """
+    scene black
+    centered "{size=+40}\[Unbreakable Bond Ending\]{/size}"
+    menu:
+        "Want to try another ending?"
+        "Sure":
+            $ is_restarted = True
+            jump day4
+        "No thanks":
+            return
 
     return

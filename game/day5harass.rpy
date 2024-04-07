@@ -309,7 +309,7 @@ label .ret5harass:
         "Want to try another ending?"
         "Sure":
             $ is_restarted = True
-            jump intro
+            jump day4
         "No thanks":
             return
     return
