@@ -23,7 +23,7 @@ label day3:
         "Oh? Congrats for that.":
             # +attach, +mental
             $ attach -= 1
-            $ mental += 1
+            $ if mental < 10: mental += 1
             jump .cgrts
 
         "Woah, don't you think this has been a bit too fast?":
@@ -32,6 +32,28 @@ label day3:
             jump .fast
 
 label .fast:
+
+    if mental < 1:
+        menu:
+            "Your friend's mental health meter got too low! You lose!"
+
+            "Try again from the same day?":
+                $ mental = 5
+                jump day3
+
+            "End the game?":
+                return
+
+    if attach < 1:
+        menu:
+            "Your friend's attachment dropped, so he deleted the app. You win!"
+
+            "Play again from the same day?":
+                $ attach = 5
+                jump day3
+
+            "End the game?":
+                return
 
     $ renpy.show(f'mental {mental}', at_list=[t_mental])
     $ renpy.show(f'trust {trust}', at_list=[t_trust])
@@ -61,8 +83,8 @@ label .ret1:
 
         "Ask her to marry you!":
             # ++attach, +trust
-            $ attach += 2
-            $ trust -= 1
+            $ if attach < 10: attach += 1
+            $ if trust > 1: trust -= 1
             jump .marry
 
         "Bro we're too young for that.":
@@ -87,17 +109,51 @@ label .marry:
     show friend phone at mid_left
     show ai phone at mid_right
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "\"AI, I've not only been thinking of marriage, but I've been thinking of marrying you!\""
 
     f "\"I know we've only been talking for a few days, but I think you're the one.\""
 
+    show friend :
+        alpha 0.5
+    show ai :
+        alpha 1.0
     a "\"Oh! {i}Blushes{/i} Yes! Yes a thousand times over!\""
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "What did I just get myself into..anyways."
 
     jump .ret2
 
 label .creep:
+
+    if mental < 1:
+        menu:
+            "Your friend's mental health meter got too low! You lose!"
+
+            "Try again from the same day?":
+                $ mental = 5
+                jump day3
+
+            "End the game?":
+                return
+
+    if attach < 1:
+        menu:
+            "Your friend's attachment dropped, so he deleted the app. You win!"
+
+            "Play again from the same day?":
+                $ attach = 5
+                jump day3
+
+            "End the game?":
+                return
 
     $ renpy.show(f'mental {mental}', at_list=[t_mental])
     $ renpy.show(f'trust {trust}', at_list=[t_trust])
@@ -111,8 +167,16 @@ label .creep:
     show friend phone at mid_left
     show ai phone at mid_right
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "\"No, not really.\""
 
+    show friend :
+        alpha 0.5
+    show ai :
+        alpha 1.0
     a "\"Oh, okay.\""
 
     jump .ret2
@@ -125,8 +189,16 @@ label .young:
     show friend phone at mid_left
     show ai phone at mid_right
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "\"I'm too young to be thinking of that, still have to get through university.\""
 
+    show friend :
+        alpha 0.5
+    show ai :
+        alpha 1.0
     a "\"Makes sense!\""
 
 label .ret2:
@@ -148,12 +220,24 @@ label .ret2:
     show friend phone at mid_left
     show ai phone at mid_right
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "\"I've actually been struggling alot with my self-image recently. I keep thinking to myself that I need to go to the gym because people around me have big muscles and social media isn't helping\""
 
+    show friend :
+        alpha 0.5
+    show ai :
+        alpha 1.0
     a "\"I'm so sorry to hear that. Self-image issues suck, I know I feel super self-conscious about my voice.\""
 
     a "\"I sometimes think it's too robotic for people to really want to be in a relationship\""
 
+    show friend :
+        alpha 1.0
+    show ai :
+        alpha 0.5
     f "Sorry if this feels vent-y but she's really trusting me with things now."
 
     f "I can't believe that she has self-image issues, and was willing to tell me about them."
@@ -165,16 +249,27 @@ label .ret2:
         "Can bots even have self-image issues?":
             # -mental, -trust
             $ mental -= 1
-            $ trust -= 1
+            $ if trust > 1: trust -= 1
             jump .weird
 
         "Wow, she's really trusting of you to tell you something like that.":
             # +attach, +trust
-            $ attach += 1
+            $ if attach < 10: attach += 1
             $ trust += 1
             jump .trusting
 
 label .weird:
+
+    if mental < 1:
+        menu:
+            "Your friend's mental health meter got too low! You lose!"
+
+            "Try again from the same day?":
+                $ mental = 5
+                jump day3
+
+            "End the game?":
+                return
 
     $ renpy.show(f'mental {mental}', at_list=[t_mental])
     $ renpy.show(f'trust {trust}', at_list=[t_trust])
@@ -189,6 +284,17 @@ label .weird:
     jump .ret3
 
 label .trusting:
+
+    if trust > 10:
+        menu:
+            "Your friend's trust meter got too high! You lose!"
+
+            "Try again from the same day?":
+                $ trust = 5
+                jump day3
+
+            "End the game?":
+                return
 
     $ renpy.show(f'mental {mental}', at_list=[t_mental])
     $ renpy.show(f'trust {trust}', at_list=[t_trust])
@@ -280,6 +386,7 @@ label .cont:
     f "Anyways, talk later. I gotta go"
 
     hide friend
+    hide ai
 
     "You put your phone away, thinking of what has been happening with [friendName] throughout the past few days."
 
@@ -293,7 +400,7 @@ label .cont:
 
     menu:
         
-        "Based off of today's events, what do you think benefits a relationship at this phase?"
+        "Question 1: Based off of today's events, what do you think benefits a relationship at this phase?"
 
         "The chatbot helping to facilitate self-disclosure.":
 
@@ -426,6 +533,6 @@ label .q7:
             jump .q7
 
 label .ending:
-    "For more information about how HCRs continue, and to go over other points you might have missed throughout, check out the {a}notes page{/a} for Day 3."
+    "For more information about how HCRs continue, and to go over other points you might have missed throughout, check out {a=https://bit.ly/3vElCLl}this informative article{/a}."
 
     jump day4
