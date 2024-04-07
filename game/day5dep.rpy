@@ -70,7 +70,7 @@ label .tooattach:
 
 label .d5dgoodret:
     """
-    Congratulations! People can get emotionally dependent on chatbots. However, even if it's as emotionally hard as a break up with another human, they still can
+    Congratulations! People can get {a=https://doi.org/10.1177/14614448221142007}emotionally dependent{/a} on chatbots. However, even if it's as emotionally hard as a break up with another human, they still can
     get out of the relationship.
 
     You got a good end! Feel free to muck about for other endings though.
@@ -80,7 +80,7 @@ label .d5dgoodret:
 
 label .d5dbadret:
     """
-    Make sure you choose differently! Your friend has gotten emotionally dependent on the chatbot. Think about how you could
+    Make sure you choose differently! Your friend has gotten {a=https://doi.org/10.1177/14614448221142007}emotionally dependent{/a} on the chatbot. Think about how you could
     change things. Maybe if his affection or trust was lower...
 
     """

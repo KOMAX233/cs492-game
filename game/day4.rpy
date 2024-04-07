@@ -165,7 +165,7 @@ label .ret4:
     scene bg lesson
 
     """
-    Your friend's relationship with the chatbot has stabilized. However, this doesn't guarantee a constant level of affection; sometimes it can fluctuate.
+    Your friend's relationship with the chatbot has {a=https://doi.org/10.1016/j.ijhcs.2022.102903}stabilized{/a}. However, this doesn't guarantee a constant level of affection; sometimes it can fluctuate.
 
     The chatbot has also started harassing your friend. This is definitely possible for a chatbot to do, whether it'd be due to an update changing its
     behavior or the algorithm determining that it's the best course of action.
