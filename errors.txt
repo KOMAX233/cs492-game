@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/day5dep.rpy", line 23: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    jump .untrust
-    ^
+File "game/day5dep.rpy", line 74: end of line expected.
+    centered "{size=+40}\["Ending: Endless Possibilities"\]{/size}"
+                           ^
+
+File "game/day5dep.rpy", line 96: end of line expected.
+    centered "{size=+40}\["Ending: Eternal Love?"\]{/size}"
+                           ^
+
+File "game/day5irl.rpy", line 102: end of line expected.
+    centered "{size=+40}\["Ending: Typical Romance"\]{/size}"
+                           ^
+
+File "game/day5irl.rpy", line 152: end of line expected.
+    centered "{size=+40}\["Smooth, bro..."\]{/size}"
+                           ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Fri Apr  5 18:24:12 2024
+Sun Apr  7 21:15:36 2024

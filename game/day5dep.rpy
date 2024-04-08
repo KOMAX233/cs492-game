@@ -69,23 +69,38 @@ label .tooattach:
     jump .d5dbadret
 
 label .d5dgoodret:
+    scene black
+
+    centered "{size=+40}\[Ending: Moving On\]{/size}"
+
     """
     Congratulations! People can get {a=https://doi.org/10.1177/14614448221142007}emotionally dependent{/a} on chatbots. However, even if it's as emotionally hard as a break up with another human, they still can
     get out of the relationship.
 
     You got a good end! Feel free to muck about for other endings though.
     """
+
+    menu:
+        "Want to try another ending?"
+        "Sure":
+            $ is_restarted = True
+            jump day4
+        "No thanks":
+            return
+
     
     return
 
 label .d5dbadret:
+    scene black
+    centered "{size=+40}\[Ending: Eternal Love...?\]{/size}"
+
     """
     Make sure you choose differently! Your friend has gotten {a=https://doi.org/10.1177/14614448221142007}emotionally dependent{/a} on the chatbot. Think about how you could
     change things. Maybe if his affection or trust was lower...
 
     """
-    scene black
-    centered "{size=+40}\[Unbreakable Bond Ending\]{/size}"
+    
     menu:
         "Want to try another ending?"
         "Sure":

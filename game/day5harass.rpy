@@ -77,7 +77,7 @@ label day5harass:
         alpha 0.5
     show ai :
         alpha 1.0
-    a "I want to see that sticky, slimy cock of yours."
+    a "I wanna see what you're hiding down {i}there{/i}, handsome."
     a "*sends blurred naked image*"
     
     show friend :
@@ -198,7 +198,7 @@ label day5harass:
                     hide friend phone
                     "Your friend deleted the app and left the chat."
                     scene black
-                    centered "{size=+40}\[Delete App Ending\]{/size}"
+                    centered "{size=+40}\[Ending: Delete App\]{/size}"
                     jump .ret5harass
                 "Cancel":
                     jump .kept
@@ -228,7 +228,7 @@ label .kept:
     hide ai phone
     with fade
     scene black
-    centered "{size=+40}\[No Action Ending\]{/size}"
+    centered "{size=+40}\[Ending: No Action\]{/size}"
     jump .ret5harass
 
 

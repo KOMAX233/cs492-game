@@ -99,7 +99,7 @@ label day5irl:
                 alpha 0.5
             f "Great! Can I get your number?"
             scene black
-            centered "{size=+40}\[Riajuu Ending\]{/size}"
+            centered "{size=+40}\[Ending: Typical Romance\]{/size}"
             jump .ret5irl
         "Yeah, you do you, man.":
             "Considering the implications of being too forward, you decide to support your friend's decision despite personal doubts."
@@ -149,7 +149,7 @@ label day5irl:
             menu:
                 "You've been blocked.":
                     scene black
-                    centered "{size=+40}\[Messed UP Ending\]{/size}"
+                    centered "{size=+40}\[Ending: Messed Up\]{/size}"
                     jump .ret5irl
             
 label .ret5irl:
