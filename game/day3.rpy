@@ -455,7 +455,7 @@ label .lesson1:
     jump .q3
 
 label .q3:
-    "Question 3: How many queries in an average conversation with an AI chatbot would you expect to contain sensitive information?"
+    "Question 2: How many queries in an average conversation with an AI chatbot would you expect to contain sensitive information?"
 
     menu:
         "10\%":
@@ -475,7 +475,7 @@ label .q3:
             jump .q3
 
 label .q4:
-    "Question 4: When studying discord chatbots researchers found that less than  ___\% of the bots had a privacy policy"
+    "Question 3: When studying discord chatbots researchers found that less than  ___\% of the bots had a privacy policy"
     
     menu:
         "5\%":
@@ -503,7 +503,7 @@ label .q4:
             jump .q4
 
 label .q5:
-    "Question 5: People above the age of 45 value  ___ more than ___ when it comes to AI chatbots"
+    "Question 4: People above the age of 45 value  ___ more than ___ when it comes to AI chatbots"
 
     menu:
         "privacy; technical elements like response quality and adaptability to the user":
@@ -519,7 +519,7 @@ label .q5:
             jump .q5
 
 label .q6:
-    "Question 6: People below the age of 45 value  ___ more than ___ when it comes to AI chatbots"
+    "Question 5: People below the age of 45 value  ___ more than ___ when it comes to AI chatbots"
 
     menu:
         "privacy; technical elements like response quality and adaptability to the user":
@@ -535,7 +535,7 @@ label .q6:
             jump .q6
 
 label .q7:
-    "Question 7: Of the 11 romantic chatbots studied by Mozilla, how many had adequate privacy or security policies?"
+    "Question 6: Of the 11 romantic chatbots studied by Mozilla, how many had adequate privacy or security policies?"
 
     menu:
         "0":

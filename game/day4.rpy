@@ -136,11 +136,11 @@ label .insult:
 
     f "*ahem*"
 
-    f "*volley of insults that can't be displayed due to a high volume of profane language*"
+    f "*a really insulting insult that can't be displayed due to a high volume of profane language*"
 
     "Going right for the jugular I see."
 
-    "They trade verbal blows. Like a heated tennis volley, neither drop the ball. It goes on for a few minutes before..."
+    "They trade verbal blows. Like a heated tennis volley, neither drops the ball. It goes on for a few minutes before..."
 
     f "Graaaah! I can't take this anymore! Gonna close the app now."
 
@@ -152,7 +152,7 @@ label .insult:
 
     show friend phone at truecenter
 
-    f "Alright... I thinnk that's enough practice. I think I can finally muster up the courage to talk to my crush. We'll go over the game plan in the morning."
+    f "Alright... I think that's enough practice. I think I can finally muster up the courage to talk to my crush. We'll go over the game plan in the morning."
 
     hide friend
 
